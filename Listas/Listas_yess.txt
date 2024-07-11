@@ -1,0 +1,424 @@
+Ejercicio 1
+
+package mx.com.ejercicio;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Tienda {
+
+	public static void main(String[] args) {
+		double ventas []= new double [5];
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingresa las 5 ventas; ");
+		for (int i = 0; i<ventas.length;i++) {
+			System.out.println("Venta " + (i+1));
+			ventas [i] = scanner.nextDouble();
+		}
+		
+		int a = 0;
+		int total = 0;
+		while (a<5) {
+			if (ventas [a] >= 2000) {
+
+				System.out.println(ventas[a]);
+				total ++;
+		} 	
+				a++;
+		}
+			System.out.println("Las ventas mayores a 2000 son: " + total);
+	}
+}
+
+Ejercicio 2
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio2 {
+	
+	public static int sumaDivisores(int num) {
+        int suma = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                suma += i;
+            }
+        }
+        return suma;
+    }
+
+    public static boolean sonAmigos(int a, int b) {
+        return sumaDivisores(a) == b && sumaDivisores(b) == a;
+    }
+
+    public static List<String> obtenerNumerosAmigos(int limiteSuperior) {
+        List<String> numerosAmigos = new ArrayList<>();
+        for (int i = 1; i <= limiteSuperior; i++) {
+            for (int j = i + 1; j <= limiteSuperior; j++) {
+                if (sonAmigos(i, j)) {
+                    numerosAmigos.add(i + " y " + j);
+                }
+            }
+        }
+        return numerosAmigos;
+    }
+
+    public static void main(String[] args) {
+        int limiteSuperior = 3000; 
+        List<String> numerosAmigos = obtenerNumerosAmigos(limiteSuperior);
+
+        System.out.println("Números amigos dentro del rango: ");
+        if (numerosAmigos.isEmpty()) {
+            System.out.println("No se encontraron números amigos en el rango especificado");
+        } else {
+            for (String par : numerosAmigos) {
+                System.out.println(par);
+            }
+        }
+    }
+
+}
+
+Ejercicio 3
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ejercicio3 {
+		
+		public static List<Integer> obtenerMultiplosDeDos(int limiteSuperior) {
+	        List<Integer> multiplosDeDos = new ArrayList<>();
+	        for (int i = 1; i <= limiteSuperior; i++) {
+	            if (i % 2 == 0) {
+	                multiplosDeDos.add(i);
+	            }
+	        }
+	        return multiplosDeDos;
+	    }
+
+	    public static void main(String[] args) {
+	    	Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Ingrese el rango: ");
+	        int limiteSuperior = scanner.nextInt();
+
+	        List<Integer> multiplosDeDos = obtenerMultiplosDeDos(limiteSuperior);
+
+	        System.out.println("Números que son múltiplos de 2: ");
+	        for (int numero : multiplosDeDos) {
+	            System.out.println(numero);
+	        }
+	    }
+
+	}
+
+Ejercicio 4
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio4 {
+		
+		public static void main(String[] args) {
+	        List<Persona> listaDePersonas = new ArrayList<>();
+
+	        listaDePersonas.add(new Persona("Juan", 30));
+	        listaDePersonas.add(new Persona("Pedro", 25));
+	        listaDePersonas.add(new Persona("Carlos", 35));
+	        listaDePersonas.add(new Persona("Ana", 29));
+	        listaDePersonas.add(new Persona("Paola", 32));
+	        listaDePersonas.add(new Persona("Fernanda", 20));
+	        listaDePersonas.add(new Persona("Luis", 45));
+
+	        System.out.println("Lista de Personas:");
+	        for (Persona persona : listaDePersonas) {
+	            System.out.println(persona);
+	        }
+	    }
+	}
+
+	class Persona {
+	    String nombre;
+	    int edad;
+
+	    Persona(String nombre, int edad) {
+	        this.nombre = nombre;
+	        this.edad = edad;
+	    }
+
+	    public String toString() {
+	        return "Nombre: " + nombre + " edad " + edad;
+	    }
+	}
+
+Ejercicio 5
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio6 {
+
+	public static void main(String[] args) {
+		
+		List<Integer> impares = obtenerNumerosImpares(1, 50);
+
+        System.out.println("Cantidad de números impares:");
+        for (int numero : impares) {
+            System.out.println(numero);
+        }
+    }
+
+    public static List<Integer> obtenerNumerosImpares(int inicio, int fin) {
+        List<Integer> impares = new ArrayList<>();
+        for (int i = inicio; i <= fin; i++) {
+            if (i % 2 != 0) {
+                impares.add(i);
+            }
+        }
+        return impares;
+    }
+	}
+
+Ejercicio 7
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio7 {
+
+	public static void main(String[] args) {	
+		
+	List<Integer> pachucaTorneoGanado = new ArrayList<>();
+			pachucaTorneoGanado.add(1999);
+			pachucaTorneoGanado.add(2001);
+			pachucaTorneoGanado.add(2003);
+			pachucaTorneoGanado.add(2006);
+			pachucaTorneoGanado.add(2007);
+			pachucaTorneoGanado.add(2016);
+			pachucaTorneoGanado.add(2022);
+	    
+	        int campeonatosGanados = pachucaTorneoGanado.size();
+	        System.out.println("El club Pachuca ha sido campeón en los años: " + pachucaTorneoGanado);
+	        System.out.println("Total de campeonatos ganados: " + campeonatosGanados);
+	    }
+}
+
+Ejercicio 8
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio8 {
+
+	public static void main(String[] args) {
+		
+		        List<String> juegosPopulares = new ArrayList<>();
+		        juegosPopulares.add("The Last of Us Part II");
+		        juegosPopulares.add("God of War");
+		        juegosPopulares.add("Spider-Man");
+		        juegosPopulares.add("Horizon Zero Dawn");
+		        juegosPopulares.add("Uncharted 4: A Thief's End");
+		        juegosPopulares.add("Resident Evil 2 Remake");
+		        juegosPopulares.add("Red Dead Redemption 2 ");
+		        juegosPopulares.add("Ghost of Tsushima");
+		        juegosPopulares.add("Final Fantasy VII Remake");
+		        juegosPopulares.add("Cyberpunk 2077");
+
+		        System.out.println("Los videojuegos más populares de PlayStation 4 son:");
+		        for (String juego : juegosPopulares) {
+		            System.out.println(juego);
+		        }
+		    }
+	}
+
+Ejercicio 9
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio9 {
+
+	public static void main(String[] args) {
+		
+				List<String> presidentes = new ArrayList<>();
+		        presidentes.add("Guadalupe Victoria");
+		        presidentes.add("Vicente Guerrero");
+		        presidentes.add("Anastasio Bustamante");
+		        presidentes.add("Antonio López de Santa Anna");
+		        presidentes.add("Benito Juárez");
+		        presidentes.add("Porfirio Díaz");
+		        presidentes.add("Francisco I. Madero");
+		        presidentes.add("Venustiano Carranza");
+		        presidentes.add("Álvaro Obregón");
+		        presidentes.add("Plutarco Elías Calles");
+		        presidentes.add("Lázaro Cárdenas del Río");
+		        presidentes.add("Manuel Ávila Camacho");
+		        presidentes.add("Miguel Alemán Valdés");
+		        presidentes.add("Adolfo Ruiz Cortines");
+		        presidentes.add("Adolfo López Mateos");
+		        presidentes.add("Gustavo Díaz Ordaz");
+		        presidentes.add("Luis Echeverría Álvarez");
+		        presidentes.add("José López Portillo");
+		        presidentes.add("Miguel de la Madrid Hurtado");
+		        presidentes.add("Carlos Salinas de Gortari");
+		        presidentes.add("Ernesto Zedillo Ponce de León");
+		        presidentes.add("Vicente Fox Quesada");
+		        presidentes.add("Felipe Calderón Hinojosa");
+		        presidentes.add("Enrique Peña Nieto");
+		        presidentes.add("Andrés Manuel López Obrador");
+
+		        System.out.println("Los presidentes que ha tenido México son:");
+		        for (String presidente : presidentes) {
+		            System.out.println(presidente);
+		        }
+			}
+}
+
+Ejercicio 10
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio10 {
+
+	public static void main(String[] args) {
+		
+		List<Estacion> estaciones = new ArrayList<>();
+        estaciones.add(new Estacion("Primavera", 92));
+        estaciones.add(new Estacion("Verano", 93));
+        estaciones.add(new Estacion("Otoño", 90));
+        estaciones.add(new Estacion("Invierno", 90));
+
+
+        System.out.println("Las estaciones del año y su duración en días:");
+        for (Estacion estacion : estaciones) {
+            System.out.println(estacion.getNombre() + " " + estacion.getDuracion() + " días");
+        }
+    }
+}
+
+		class Estacion {
+		    private String nombre;
+		    private int duración;
+		
+		    public Estacion(String nombre, int duracion) {
+		        this.nombre = nombre;
+		        this.duración = duracion;
+		    }
+		
+		    public String getNombre() {
+		        return nombre;
+		    }
+		
+		    public int getDuracion() {
+		        return duración;
+		    }
+}
+
+Ejercicio 11
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio11 {
+
+	public static void main(String[] args) {
+		
+		List<Seleccion> selecciones = new ArrayList<>();
+        selecciones.add(new Seleccion("Brasil", 5));
+        selecciones.add(new Seleccion("Alemania", 4));
+        selecciones.add(new Seleccion("Italia", 4));
+        selecciones.add(new Seleccion("Uruguay", 2));
+        selecciones.add(new Seleccion("Argentina", 2));
+        selecciones.add(new Seleccion("Francia", 2));
+        selecciones.add(new Seleccion("Inglaterra", 1));
+        selecciones.add(new Seleccion("España", 1));
+
+        System.out.println("Selecciones que han ganado más mundiales:");
+        for (Seleccion seleccion : selecciones) {
+            System.out.println(seleccion.getNombre() + " " + seleccion.getVecesGanado());
+        }
+    }
+}
+			class Seleccion {
+			    private String nombre;
+			    private int vecesGanado;
+			
+			    public Seleccion(String nombre, int vecesGanado) {
+			        this.nombre = nombre;
+			        this.vecesGanado = vecesGanado;
+			    }
+			
+			    public String getNombre() {
+			        return nombre;
+			    }
+			
+			    public int getVecesGanado() {
+			        return vecesGanado;
+		}
+}
+
+Ejercicio 12
+
+package mx.com.ejercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ejercicio12 {
+
+	public static void main(String[] args) {
+		
+			int limite = 10000; 
+        
+			List<Integer> numerosPerfectos = buscarNumerosPerfectos(limite);
+        
+			System.out.println("Lista de números perfectos hasta " + limite + ":");
+			for (int numero : numerosPerfectos) {
+            System.out.println(numero);
+        }
+    }
+
+    		public static List<Integer> buscarNumerosPerfectos(int limite) {
+    			List<Integer> numerosPerfectos = new ArrayList<>();
+
+    				for (int i = 1; i <= limite; i++) {
+    					if (esNumeroPerfecto(i)) {
+    						numerosPerfectos.add(i);
+            }
+        }
+
+        return numerosPerfectos;
+    }
+
+    		public static boolean esNumeroPerfecto(int numero) {
+    			int sumaDivisores = 0;
+
+    				for (int i = 1; i <= numero / 2; i++) {
+    					if (numero % i == 0) {
+    						sumaDivisores += i;
+            }
+        }
+        return sumaDivisores == numero;		
+	    }	
+	}
+
