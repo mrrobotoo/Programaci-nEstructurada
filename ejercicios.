@@ -1,0 +1,154 @@
+ejercicio1
+ int[] num = new int[12];
+    num[0] = 39;
+    num[1] = -2;
+    num[4] = 0;
+    num[6] = 14;
+    num[8] = 5;
+    num[9] = 120;
+    for (int i = 0; i < 12; i++){
+      System.out.print(num[i]+" ");
+    }
+   ejercicio 2
+   char[] simbolo = new char[10];
+    simbolo[0] = 'a';
+    simbolo[1] = 'x';
+    simbolo[4] = '@';
+    simbolo[6] = ' ';
+    simbolo[8] = '+';
+    simbolo[9] = 'Q';
+    for (int i = 0; i < 10; i++){
+      System.out.print(simbolo[i]+" ");
+    }
+    ejercicio 3
+    int[] matriz = new int[10];
+    for (int i = 0; i < 10; i++){
+      System.out.print("Introduce el valor del array: ");
+      matriz[i] = Integer.parseInt(System.console().readLine());
+    }
+    System.out.println();
+    for (int i = 9; i >= 0; i--){
+      System.out.print(matriz[i]+" ");
+    }
+    ejercicio 4
+    int[] numero = new int[20];
+    int[] cuadrado = new int[20];
+    int[] cubo = new int[20];
+    for (int i = 0; i < 20; i++){
+      numero[i] = (int)(Math.random()*100);
+    }
+    for (int i = 0; i < 20; i++){
+      cuadrado[i] = numero[i]*numero[i];
+    }
+    for (int i = 0; i < 20; i++){
+      cubo[i] = cuadrado[i]*numero[i];
+    }
+    System.out.println();
+    System.out.print("Número: ");
+    for (int i = 0; i < 20; i++){
+      System.out.print(numero[i]+" ");
+    }
+    System.out.println();
+    System.out.print("Cuadrado: ");
+    for (int i = 0; i < 20; i++){
+      System.out.print(cuadrado[i]+" ");
+    }
+    System.out.println();
+    System.out.print("Cubo: ");
+    for (int i = 0; i < 20; i++){
+      System.out.print(cubo[i]+" ");
+    }
+    ejercicio 5
+    int[] numero = new int[20];
+    for (int i = 0; i < 10; i++){
+      System.out.print("Introduce el valor del array: ");
+      numero[i] = Integer.parseInt(System.console().readLine());
+    }
+    int maximo = numero[0];
+    int minimo = numero[0];
+    int posMax = 0;
+    int posMin = 0;
+    for (int i = 0; i < 10; i++){
+      if (numero[i] < minimo){
+        minimo = numero[i];
+        posMin = i;
+      }
+      if (numero[i] > maximo){
+        maximo = numero [i];
+        posMax = i;
+      }
+    }
+    for (int i = 0; i < 10; i++){
+      System.out.print(numero[i]);
+      if (i == posMax){
+        System.out.print(" máximo");
+      }
+      if (i == posMin){
+        System.out.print(" mínimo");
+      }
+      System.out.println();
+    }
+    ejercicio 6
+    int[] numero = new int[10];
+    System.out.print("Introduce 15 números: ");
+    for (int i = 0; i < numero.length; i++){
+      numero[i] = Integer.parseInt(System.console().readLine());
+    }
+    int aux = numero[numero.length-1];
+    for (int i = (numero.length - 1); i > 0; --i){
+      numero[i] = numero[i-1];
+    }
+    numero[0] = aux;
+    System.out.println();
+    for (int i = 0; i < numero.length; i++){
+      System.out.print(numero[i]+" ");
+    }
+    ejercicio 7
+    int[] array = new int[100];
+    for (int i = 0; i < array.length; i++){
+      array[i] = (int)(Math.random()*21);
+    }
+    for (int i = 0; i < array.length; i++){
+      System.out.print(array[i]+" ");
+    }
+    System.out.println();
+    System.out.print("Introduce 1 número: ");
+    int num = Integer.parseInt(System.console().readLine());
+    System.out.print("Introduce el valor que quieres sustituir (0-20): ");
+    int sust = Integer.parseInt(System.console().readLine());
+    for (int i = 0; i < array.length; i++){
+      if (array[i] == sust){
+        System.out.print("\""+num+"\" ");
+      }
+      else {
+        System.out.print(array[i]+" ");
+      }
+    }
+    ejercicios 8
+    int[] temperatura = new int[12];
+    for (int i = 0; i < temperatura.length; i++){
+      System.out.print("Introduce la temperatura media del mes "+(i+1)+": ");
+      temperatura[i] = Integer.parseInt(System.console().readLine());
+    }
+    for (int i = 0; i < temperatura.length; i++){
+      System.out.print("Mes "+(i+1)+": ");
+      for (int j = 0; j < temperatura[i]; j++){
+        System.out.print("|");
+      }
+      System.out.println();
+    }
+    ejercicios 9
+    int[] numero = new int[8];
+    System.out.print("Introduce 8 números: ");
+    for (int i = 0; i < numero.length; i++){
+      numero[i] = Integer.parseInt(System.console().readLine());
+    }
+    for (int i = 0; i < numero.length; i++){
+      System.out.print(numero[i]);
+      if (numero[i]% 2 == 0){
+        System.out.println(" par");
+      } else {
+        System.out.println(" impar");
+      }
+    }
+    
