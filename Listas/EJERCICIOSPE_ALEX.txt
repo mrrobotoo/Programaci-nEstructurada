@@ -1,0 +1,185 @@
+EJ1:
+import java.util.*;
+
+public class Ejercicio1 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>();
+        lista.add("Manzana")
+        lista.add("Banana");
+        lista.add("Naranja")
+        
+        System.out.println(lista);
+    }
+}
+
+EJ2:
+import java.util.*;
+
+public class Ejercicio2 {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
+        
+        for (int i = 0; i < numeros.size(); i++) {
+            System.out.println(numeros.get(i);
+        }
+    }
+}
+
+
+EJ3:
+import java.util.*;
+
+public class Ejercicio3 {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
+        int suma = 0;
+        
+        for (int num : numeros) {
+            suma += num;
+        }
+        
+        System.out.println("Suma: " + suma)
+    }
+}
+
+
+EJ4:
+import java.util.*;
+
+public class Ejercicio4 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        lista.remove("C")
+        
+        System.out.println(lista);
+    }
+}
+
+EJ5:
+
+import java.util.*;
+
+public class Ejercicio5 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        
+        if (lista.contains("C")) {
+            System.out.println("Encontrado!");
+        } else {
+            System.out.println("No encontrado")
+        }
+    }
+}
+
+EJ6:
+import java.util.*;
+
+public class Ejercicio6 {
+    public static void main(String[] args) {
+        List<Integer> numeros = new ArrayList<>(Arrays.asList(5, 3, 8, 1, 2));
+        Collections.sort(numeros)
+        
+        System.out.println(numeros);
+    }
+}
+
+EJ7:
+import java.util.*;
+
+public class Ejercicio7 {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(5, 3, 8, 1, 2);
+        int max = Collections.max(numeros);
+        
+        System.out.println("Máximo: " + max)
+    }
+}
+
+EJ8:
+import java.util.*;
+
+public class Ejercicio8 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        String[] array = lista.toArray(new String[0]);
+        
+        System.out.println(Arrays.toString(array))
+    }
+}
+
+EJ9:
+import java.util.*;
+
+public class Ejercicio9 {
+    public static void main(String[] args) {
+        List<String> lista1 = new ArrayList<>(Arrays.asList("A", "B"));
+        List<String> lista2 = new ArrayList<>(Arrays.asList("C", "D"));
+        lista1.addAll(lista2);
+        
+        System.out.println(lista1)
+    }
+}
+
+EJ10:
+import java.util.*;
+
+public class Ejercicio10 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        lista.clear();
+        
+        System.out.println(lista);
+    }
+}
+
+EJ11:
+import java.util.*;
+
+public class Ejercicio11 {
+    public static void main(String[] args) {
+        List<String> lista1 = new ArrayList<>(Arrays.asList("A", "B", "C"));
+        List<String> lista2 = new ArrayList<>(Arrays.asList("A", "B", "D"));
+        
+        boolean sonIguales = lista1.equals(lista2)
+        
+        System.out.println("Las listas son iguales: " + sonIguales);
+    }
+}
+
+EJ12:
+import java.util.*;
+
+public class Ejercicio12 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+        lista.set(2, "Z");
+        
+        System.out.println(lista)
+    }
+}
+
+EJ13:
+import java.util.*;
+
+public class Ejercicio13 {
+    public static void main(String[] args) {
+        List<Integer> numeros = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        Collections.reverse(numeros);
+        
+        System.out.println(numeros)
+    }
+}
+
+EJ14:
+import java.util.*;
+
+public class Ejercicio14 {
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "E"));
+        List<String> subLista = lista.subList(1, 3);
+        
+        System.out.println(subLista)
+    }
+}
+
+
