@@ -1,0 +1,297 @@
+Ejemplo 1
+package mx.com.cuh;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Listas {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        List<String> nombres = new ArrayList<>();
+        System.out.println("Ingresa tu nombre: ");
+        
+        String nombre = scanner.next();
+        nombres.add(nombre);
+        
+        System.out.println("Ingresa peso: "); 
+        Float peso = scanner.nextFloat();
+        
+        System.out.println("Ingresa otra Altura (En metros): "); 
+        Float Altura = scanner.nextFloat();
+        
+        Float imc = peso / (Altura * Altura);
+        System.out.println("Su masa corporal es de (Kilogramos): " + imc + ";)");
+        
+        if (imc < 16) {
+            System.out.println("Delgadez Severa");
+        } else if (imc >= 16 && imc < 17) {
+            System.out.println("Delgadez Moderada"); 
+        } else if (imc >= 17 && imc < 18.5) {
+            System.out.println("Delgadez Leve"); 
+        } else if (imc >= 18.5 && imc < 25) {
+            System.out.println("Peso Normal"); 
+        } else if (imc >= 25 && imc < 30) {
+            System.out.println("Sobrepeso"); 
+        } else if (imc >= 30 && imc < 35) {
+            System.out.println("Obesidad Leve");
+        } else if (imc >= 35 && imc < 40) {
+            System.out.println("Obesidad Moderada");
+        } else if (imc >= 40) {
+            System.out.println("Obesidad Mórbida");
+        }
+
+     
+        System.out.println("Nombres ingresados:");
+        for (String n : nombres) {
+            System.out.println(n);
+        }
+        
+        scanner.close();
+    }
+}
+Ejemplo 2
+package mx.com.cuh;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class NumeroPerfecto {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        List<Integer> numerosPerfectos = new ArrayList<>(); 
+        System.out.println("Ingresar número Perfecto: ");
+        
+        int n = scanner.nextInt();
+        int suma = 0, count = 1;
+
+        do {
+            if (n % count == 0) {
+                suma += count;
+            }
+            count++;
+        } while (count < n);
+
+        if (suma == n) {
+            System.out.println("El número es Perfecto");
+            numerosPerfectos.add(n); 
+        } else {
+            System.out.println("El número no es Perfecto");
+        }
+
+        System.out.println("Números perfectos ingresados:");
+        for (int num : numerosPerfectos) {
+            System.out.println(num);
+        }
+
+        scanner.close();
+    }
+}
+
+
+Ejemplo 3
+package mx.com.cuh;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class Amstrong {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> numerosArmstrong = new ArrayList<>(); 
+
+        System.out.println("Ingresa un número: ");
+        int n = scanner.nextInt();
+
+        if (isArmstrong(n)) {
+            System.out.println("Es un número Armstrong");
+            numerosArmstrong.add(n); 
+        } else {
+            System.out.println("No es un número Armstrong");
+        }
+
+       
+        System.out.println("Números Armstrong ingresados:");
+        for (int num : numerosArmstrong) {
+            System.out.println(num);
+        }
+
+        scanner.close();
+    }
+
+    private static boolean isArmstrong(int num) {
+        int temporal = num, digitos = 0, ultimoDigito, suma = 0;
+        digitos = (int) (Math.log10(num) + 1);
+        temporal = num;
+        while (temporal > 0) {
+            ultimoDigito = temporal % 10;
+            suma += Math.pow(ultimoDigito, digitos);
+            temporal /= 10;
+        }
+        return num == suma;
+    }
+}
+
+
+Ejemplo 4
+
+package mx.com.cuh;
+
+import java.util.Scanner;
+
+public class EDAD1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa la cantidad de personas a registrar: ");
+        int cantidadPersonas = scanner.nextInt();
+
+        int[] edades = new int[cantidadPersonas]; 
+
+        for (int i = 0; i < cantidadPersonas; i++) {
+            System.out.print("Ingresa la edad de la persona " + (i + 1) + ": ");
+            edades[i] = scanner.nextInt();
+        }
+ 
+
+        for (int edad : edades) {
+            if (edad < 13) {
+                System.out.println("Niño");
+            } else if (edad >= 14 && edad <= 17) {
+                System.out.println("Adolescente");
+                
+            } else if (edad >= 18 && edad <= 64) {
+                System.out.println("Adulto");
+              
+            } else if (edad >= 65) {
+                System.out.println("Adulto Mayor");
+                
+            }
+        }
+
+        System.out.println("Cantidad de personas registradas: " + cantidadPersonas);
+       
+    }
+}
+
+Ejemplo 5
+
+package mx.com.cuh;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class NumerosAmigos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+        List<Integer> numeroAmigo = new ArrayList<>(); 
+        
+        System.out.println("Ingresar número 1: ");
+        int numero1 = scanner.nextInt();
+        
+        System.out.println("Ingresar número 2: ");
+        int numero2 = scanner.nextInt();
+        
+        if (sonAmigos(numero1, numero2)) {
+            System.out.println(numero1 + " y " + numero2 + " Son Amigos."); 
+            numeroAmigo.add(numero1); 
+            numeroAmigo.add(numero2); 
+              } else {
+            System.out.println(numero1 + " y " + numero2 + " No son Amigos.");
+        }
+        System.out.println("Numeros Amigos registrados" + numeroAmigo);
+        
+        scanner.close(); 
+    }
+    
+
+    public static boolean sonAmigos(int num1, int num2) {
+        int sumaNum1 = sumaDivisores(num1);
+        int sumaNum2 = sumaDivisores(num2);
+        return sumaNum1 == num2 && sumaNum2 == num1;
+    }
+    
+    public static int sumaDivisores(int numero) {
+        int suma = 0;
+        for (int i = 1; i < numero; i++) {
+            if (numero % i == 0) {
+                suma += i;
+            }
+        }
+        return suma;
+    }
+}
+
+Ejemplo 6
+package mx.com.cuh.DTO;
+
+import java.util.Scanner;
+
+public class Persona {
+	 public static void invitadom(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        
+	        String [] arreglo = {"Oscar", "Daniel", "Pedro"};
+	        
+	        System.out.println("Ingresar nombre: ");
+	        String nom = scanner.next();
+	        
+	        boolean invitado = false;
+	        for (String nombre : arreglo) {
+	            if (nombre.equals(nom)) {
+	                invitado = true;
+	                break;
+	            }
+	        }
+
+	        System.out.println(invitado ? "Está invitado." : "No está invitado.");
+
+	        scanner.close();
+	    }
+	
+	        
+	 }
+	        
+	 
+	Ejemplo 7
+
+package mx.com.cuh;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ganador {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        
+	        
+	        Integer [] Ganador = {22, 54, 80};
+	        
+	        
+	        System.out.println("Ingresar numero: ");
+	        int num = scanner.nextInt();
+	        
+	        boolean invitado = false;
+	        for (int numero : Ganador) {
+	            if (numero == num) {
+	                invitado = true;
+	                break;
+	            }
+	        }
+
+	        if (invitado) {
+	            System.out.println("Ganaste el sorteo!! Te ganaste un terrreeeneeeiitorrrr");
+	            numerosPerfectos.add(num); 
+	        } else {
+	            System.out.println("Sigue participando :( " );
+	        }
+
+	        scanner.close();
+	    }
+	}
