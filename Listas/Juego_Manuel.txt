@@ -1,0 +1,120 @@
+ej1
+// Agregar jugadores a la lista
+    jugadores.add("Jugador1");
+    jugadores.add("Jugador2");
+    jugadores.add("Jugador3");
+    
+    // Iterar y imprimir la lista de jugadores usando un bucle for
+    for (String jugador : jugadores) {
+        System.out.println(jugador);
+        
+    }
+}
+ej2
+  public static void main(String[] args) {
+        List<String> jugadores = new ArrayList<>();
+        jugadores.add("Jugador1");
+        jugadores.add("Jugador2");
+        jugadores.add("Jugador3");
+        
+        // Usar un bucle for para imprimir solo el segundo elemento
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (i == 1) {
+                System.out.println(jugadores.get(i));
+            }
+        }
+    }
+}
+ej3
+public class Total {
+    public static void main(String[] args) {
+        // Crear la lista de jugadores
+        List<String> jugadores = new ArrayList<>();
+        
+        // Agregar jugadores a la lista
+        jugadores.add("Jugador1");
+        jugadores.add("Jugador2");
+        jugadores.add("Jugador3");
+        
+        // Contador para el número de elementos en la lista
+        int contador = 0;
+        
+        // Usar un bucle for para contar el número de elementos
+        for (int i = 0; i < jugadores.size(); i++) {
+            contador++;
+        }
+        
+        // Imprimir el tamaño de la lista
+        System.out.println(contador); // Imprime "3"
+    }
+}
+ej4
+public class Verificar {
+    public static void main(String[] args) {
+        List<String> jugadores = new ArrayList<>();
+        jugadores.add("Jugador1");
+        jugadores.add("Jugador2");
+        jugadores.add("Jugador3");
+        
+        // Variable para almacenar el resultado
+        boolean encontrado = false;
+        
+        // Usar un bucle for para verificar si "Jugador3" está en la lista
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).equals("Jugador3")) {
+                encontrado = true;
+                break; // Salir del bucle una vez encontrado
+            }
+        }
+        
+        // Imprimir el resultado
+        System.out.println(encontrado); // Imprime "true"
+    }
+}
+ej5
+public class Eliminar {
+    public static void main(String[] args) {
+        List<String> jugadores = new ArrayList<>();
+        jugadores.add("Jugador1");
+        jugadores.add("Jugador2");
+        jugadores.add("Jugador3");
+        
+        // Usar un bucle for para eliminar "Jugador2" de la lista
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).equals("Jugador2")) {
+                jugadores.remove(i);
+                break; // Salir del bucle una vez que se ha eliminado el elemento
+            }
+        }
+        
+        // Imprimir la lista de jugadores
+        System.out.println(jugadores); // Imprime "[Jugador1, Jugador3]"
+    }
+}
+wj6
+public class Alfabéticamente {
+    public static void main(String[] args) {
+        // Crear la lista de jugadores
+        List<String> jugadores = new ArrayList<>();
+        
+        // Agregar jugadores a la lista
+        jugadores.add("b");
+        jugadores.add("a");
+        jugadores.add("c");
+        
+        // Implementar el algoritmo de burbuja para ordenar la lista
+        for (int i = 0; i < jugadores.size() - 1; i++) {
+            for (int j = 0; j < jugadores.size() - 1 - i; j++) {
+                if (jugadores.get(j).compareTo(jugadores.get(j + 1)) > 0) {
+                    // Intercambiar jugadores[j] y jugadores[j + 1]
+                    String temp = jugadores.get(j);
+                    jugadores.set(j, jugadores.get(j + 1));
+                    jugadores.set(j + 1, temp);
+                }
+            }
+        }
+        
+        // Imprimir la lista de jugadores ordenada
+        System.out.println(jugadores); // Imprime "[Jugador1, Jugador2, Jugador3]"
+    }
+}
